@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const tokenverify =  require("../login/login")
+const jwt = require("jsonwebtoken")
 
 // middleware
 function tokenverification(req, res, next){
