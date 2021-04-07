@@ -17,8 +17,8 @@ router.post("/adduserdata" , (req,res) => {
 
     //sql procedure
     let userdatafromangular = JSON.stringify(req.body);
-    //let stored_procedure_query = "EXEC SpUserFillData @json ='"+userdatafromangular+"';";
-    //sqlcon.dosomthing(stored_procedure_query);
+    let stored_procedure_query = "EXEC SpUserFillData @json ='"+userdatafromangular+"';";
+    sqlcon.dosomthing(stored_procedure_query);
 
     //token
     let payload = { subject: req.body.UserEmail }
