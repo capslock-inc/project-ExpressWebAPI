@@ -15,8 +15,10 @@ router.post("/addgroupdata" , (req,res) => {
     console.log(req.body);
     res.status(200).send({"message":"data recieved -- addgroup"})
     let usergroupdatafromangular = JSON.stringify(req.body);
-    let stored_procedure_query = "EXEC SpUserGroupData @grpjson ='"+usergroupdatafromangular+"';";
+    let stored_procedure_query = "EXEC SpAddUserGroup @groupjson ='"+usergroupdatafromangular+"';";
     sqlcon.dosomthing(stored_procedure_query);
 })
+
+
 
 module.exports = router;
